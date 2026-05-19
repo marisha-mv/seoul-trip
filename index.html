@@ -1,0 +1,1017 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Seoul — May 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,700;1,9..144,300;1,9..144,400&family=Inter+Tight:wght@300;400;500;600&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,700;1,6..96,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #f4ecdf;
+    --paper: #ede2cf;
+    --ink: #2a1f17;
+    --ink-soft: #5a4a3c;
+    --accent: #a83a2c;
+    --gold: #b08953;
+    --line: #d4c3a8;
+    --line-soft: #e2d5bc;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--cream);
+    color: var(--ink);
+    font-family: 'Fraunces', Georgia, serif;
+    font-weight: 400;
+    line-height: 1.65;
+    font-size: 17px;
+    overflow-x: hidden;
+  }
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    background-image:
+      radial-gradient(circle at 20% 30%, rgba(176, 137, 83, 0.04) 0%, transparent 50%),
+      radial-gradient(circle at 80% 70%, rgba(168, 58, 44, 0.03) 0%, transparent 50%);
+    z-index: 1;
+  }
+  body::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.16 0 0 0 0 0.12 0 0 0 0 0.09 0 0 0 0.06 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    opacity: 0.5;
+    mix-blend-mode: multiply;
+    z-index: 2;
+  }
+  .container {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 0 32px;
+    position: relative;
+    z-index: 10;
+  }
+  .cover {
+    min-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 80px 32px 60px;
+    position: relative;
+  }
+  .cover-meta {
+    font-family: 'Inter Tight', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    margin-bottom: 40px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .cover-meta::after { content: ''; flex: 1; height: 1px; background: var(--line); }
+  .cover h1 {
+    font-family: 'Bodoni Moda', serif;
+    font-weight: 400;
+    font-size: clamp(64px, 12vw, 156px);
+    line-height: 0.92;
+    letter-spacing: -0.04em;
+    margin-bottom: 32px;
+  }
+  .cover h1 em { font-style: italic; color: var(--accent); }
+  .cover-sub {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 22px;
+    color: var(--ink-soft);
+    max-width: 600px;
+    margin-bottom: 56px;
+    line-height: 1.5;
+  }
+  .cover-dates { display: flex; gap: 48px; flex-wrap: wrap; align-items: baseline; }
+  .date-block { border-top: 1px solid var(--line); padding-top: 12px; min-width: 140px; }
+  .date-block .label {
+    font-family: 'Inter Tight', sans-serif;
+    font-size: 10px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    margin-bottom: 8px;
+  }
+  .date-block .value { font-family: 'Bodoni Moda', serif; font-size: 28px; line-height: 1.1; }
+  .cover-flourish {
+    position: absolute;
+    top: 80px;
+    right: 32px;
+    font-family: 'Bodoni Moda', serif;
+    font-style: italic;
+    font-size: 14px;
+    color: var(--accent);
+    transform: rotate(8deg);
+    opacity: 0.7;
+  }
+
+  .intro { padding: 80px 0; border-top: 1px solid var(--line); }
+  .intro h2 {
+    font-family: 'Bodoni Moda', serif;
+    font-weight: 400;
+    font-size: clamp(32px, 4vw, 44px);
+    line-height: 1.1;
+    margin-bottom: 28px;
+    max-width: 620px;
+  }
+  .intro h2 em { font-style: italic; color: var(--accent); }
+  .intro-text {
+    font-family: 'Fraunces', serif;
+    font-size: 19px;
+    line-height: 1.7;
+    max-width: 720px;
+  }
+  .intro-text p + p { margin-top: 16px; }
+  .intro-text em { font-style: italic; color: var(--accent); }
+  .appointments {
+    margin: 50px 0 0;
+    background: var(--paper);
+    padding: 32px 36px;
+    border-left: 3px solid var(--accent);
+  }
+  .appointments-title {
+    font-family: 'Inter Tight', sans-serif;
+    font-size: 10px;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 18px;
+  }
+  .appt-row {
+    display: grid;
+    grid-template-columns: 110px 1fr;
+    gap: 24px;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--line);
+    font-family: 'Fraunces', serif;
+    font-size: 16px;
+  }
+  .appt-row:last-child { border-bottom: none; }
+  .appt-day { font-family: 'Bodoni Moda', serif; font-weight: 700; font-style: italic; color: var(--accent); }
+
+  .day { padding: 90px 0 50px; border-top: 1px solid var(--line); }
+  .day-header { margin-bottom: 44px; }
+  .day-number {
+    font-family: 'Bodoni Moda', serif;
+    font-style: italic;
+    font-size: 14px;
+    color: var(--accent);
+    letter-spacing: 0.1em;
+    margin-bottom: 10px;
+  }
+  .day-title {
+    font-family: 'Bodoni Moda', serif;
+    font-weight: 400;
+    font-size: clamp(38px, 5.5vw, 58px);
+    line-height: 1.02;
+    letter-spacing: -0.02em;
+    margin-bottom: 14px;
+  }
+  .day-title em { font-style: italic; color: var(--accent); }
+  .day-tagline {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 19px;
+    color: var(--ink-soft);
+    max-width: 720px;
+    line-height: 1.5;
+  }
+
+  .day-body { display: grid; grid-template-columns: 1fr 320px; gap: 64px; align-items: start; }
+  .agenda { list-style: none; }
+  .agenda-item {
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    gap: 28px;
+    padding: 20px 0;
+    border-bottom: 1px dashed var(--line-soft);
+    align-items: start;
+  }
+  .agenda-item:last-child { border-bottom: none; }
+  .agenda-time {
+    font-family: 'Bodoni Moda', serif;
+    font-style: italic;
+    font-size: 17px;
+    color: var(--accent);
+    padding-top: 2px;
+  }
+  .agenda-body h3 {
+    font-family: 'Bodoni Moda', serif;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 1.2;
+    margin-bottom: 4px;
+  }
+  .agenda-body .meta {
+    font-family: 'Inter Tight', sans-serif;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    margin-bottom: 8px;
+  }
+  .agenda-body p {
+    font-family: 'Fraunces', serif;
+    font-size: 15.5px;
+    line-height: 1.55;
+    color: var(--ink-soft);
+  }
+  .agenda-body p em { font-style: italic; color: var(--accent); }
+  .agenda-body p strong { font-weight: 500; color: var(--ink); }
+
+  .sidebar {
+    position: sticky;
+    top: 32px;
+    background: var(--paper);
+    padding: 28px 26px;
+    border-top: 2px solid var(--accent);
+  }
+  .sidebar-label {
+    font-family: 'Inter Tight', sans-serif;
+    font-size: 10px;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 6px;
+  }
+  .sidebar-title {
+    font-family: 'Bodoni Moda', serif;
+    font-style: italic;
+    font-size: 20px;
+    line-height: 1.2;
+    margin-bottom: 20px;
+  }
+  .alt-list { list-style: none; }
+  .alt { padding: 16px 0; border-bottom: 1px solid var(--line); }
+  .alt:last-child { border-bottom: none; padding-bottom: 0; }
+  .alt:first-child { padding-top: 0; }
+  .alt-name {
+    font-family: 'Bodoni Moda', serif;
+    font-size: 17px;
+    line-height: 1.25;
+    margin-bottom: 4px;
+  }
+  .alt-name strong { font-style: italic; font-weight: 400; color: var(--accent); }
+  .alt-meta {
+    font-family: 'Inter Tight', sans-serif;
+    font-size: 9.5px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    margin-bottom: 6px;
+  }
+  .alt-desc {
+    font-family: 'Fraunces', serif;
+    font-size: 13.5px;
+    line-height: 1.5;
+    color: var(--ink-soft);
+  }
+
+  .day.solo .day-body { grid-template-columns: 1fr; }
+
+  .pull-quote {
+    margin: 70px 0 30px;
+    padding: 0 60px;
+    text-align: center;
+    position: relative;
+  }
+  .pull-quote::before,
+  .pull-quote::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 40px;
+    height: 1px;
+    background: var(--accent);
+  }
+  .pull-quote::before { left: 0; }
+  .pull-quote::after { right: 0; }
+  .pull-quote p {
+    font-family: 'Bodoni Moda', serif;
+    font-style: italic;
+    font-size: 24px;
+    line-height: 1.4;
+    color: var(--accent);
+  }
+
+  .tips { padding: 70px 0 50px; border-top: 1px solid var(--line); }
+  .tips-header { margin-bottom: 36px; }
+  .tips-header h2 {
+    font-family: 'Bodoni Moda', serif;
+    font-weight: 400;
+    font-size: clamp(30px, 4vw, 40px);
+    line-height: 1.1;
+  }
+  .tips-header h2 em { font-style: italic; color: var(--accent); }
+  .tips-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 52px; }
+  .tips-col h3 {
+    font-family: 'Bodoni Moda', serif;
+    font-weight: 400;
+    font-style: italic;
+    font-size: 22px;
+    color: var(--accent);
+    margin-bottom: 14px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--line);
+  }
+  .tips-col ul { list-style: none; }
+  .tips-col li {
+    font-family: 'Fraunces', serif;
+    font-size: 15px;
+    line-height: 1.6;
+    padding: 8px 0 8px 20px;
+    position: relative;
+  }
+  .tips-col li::before {
+    content: '✦';
+    position: absolute;
+    left: 0;
+    top: 8px;
+    color: var(--gold);
+    font-size: 11px;
+  }
+  .tips-col strong { font-weight: 500; }
+
+  .footer {
+    padding: 70px 0 90px;
+    text-align: center;
+    border-top: 1px solid var(--line);
+    margin-top: 50px;
+  }
+  .footer-flourish {
+    font-family: 'Bodoni Moda', serif;
+    font-style: italic;
+    font-size: 56px;
+    color: var(--accent);
+    line-height: 1;
+    margin-bottom: 20px;
+  }
+  .footer p {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 18px;
+    color: var(--ink-soft);
+    margin-bottom: 6px;
+  }
+  .footer .signature {
+    font-family: 'Bodoni Moda', serif;
+    font-style: italic;
+    font-size: 26px;
+    color: var(--accent);
+    margin-top: 22px;
+  }
+
+  @media (max-width: 900px) {
+    .day-body { grid-template-columns: 1fr; gap: 40px; }
+    .sidebar { position: static; }
+  }
+  @media (max-width: 600px) {
+    body { font-size: 16px; }
+    .container { padding: 0 22px; }
+    .cover { padding: 60px 22px 40px; min-height: auto; }
+    .cover h1 { font-size: clamp(52px, 16vw, 96px); }
+    .cover-sub { font-size: 18px; margin-bottom: 40px; }
+    .cover-dates { gap: 24px; }
+    .date-block { min-width: 0; flex: 1; }
+    .date-block .value { font-size: 22px; }
+    .cover-flourish { top: 32px; right: 22px; font-size: 12px; }
+    .intro { padding: 60px 0; }
+    .intro h2 { font-size: 30px; }
+    .appointments { padding: 24px 20px; margin-left: -22px; margin-right: -22px; }
+    .appt-row { grid-template-columns: 80px 1fr; gap: 16px; font-size: 15px; }
+    .day { padding: 60px 0 36px; }
+    .day-title { font-size: clamp(34px, 8vw, 46px); }
+    .day-tagline { font-size: 17px; }
+    .agenda-item { grid-template-columns: 1fr; gap: 6px; }
+    .agenda-time { font-size: 15px; padding-top: 0; }
+    .pull-quote { padding: 0 20px; }
+    .pull-quote p { font-size: 19px; }
+    .pull-quote::before, .pull-quote::after { display: none; }
+    .tips { padding: 50px 0 30px; }
+    .tips-grid { grid-template-columns: 1fr; gap: 32px; }
+    .footer { padding: 50px 0 70px; }
+  }
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .cover h1, .cover-sub, .cover-dates, .cover-meta {
+    animation: fadeUp 0.9s ease-out both;
+  }
+  .cover-meta { animation-delay: 0.05s; }
+  .cover h1 { animation-delay: 0.15s; }
+  .cover-sub { animation-delay: 0.35s; }
+  .cover-dates { animation-delay: 0.5s; }
+  @media print {
+    body::before, body::after { display: none; }
+    .day { page-break-before: always; }
+    .sidebar { position: static; }
+  }
+</style>
+</head>
+<body>
+
+<section class="cover">
+  <div class="cover-flourish">a journal for two</div>
+  <div class="container" style="padding: 0;">
+    <div class="cover-meta">
+      <span>Travel Journal № 01</span>
+      <span>21–28 May 2026</span>
+    </div>
+    <h1>Seoul,<br><em>softly.</em></h1>
+    <p class="cover-sub">
+      Eight days, two cousins, one city. Built around appointments, slow shopping,
+      and the kind of small experiences you only find in Seoul.
+    </p>
+    <div class="cover-dates">
+      <div class="date-block"><div class="label">Arrival</div><div class="value">Thu 21 May</div></div>
+      <div class="date-block"><div class="label">Departure</div><div class="value">Thu 28 May</div></div>
+      <div class="date-block"><div class="label">Based in</div><div class="value">Myeongdong</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="intro">
+  <div class="container">
+    <h2>How <em>this works.</em></h2>
+    <div class="intro-text">
+      <p>
+        Each day has <strong>one main plan</strong> — the things we'll do together — and a
+        small sidebar of <em>alternatives</em>. Lifestyle stuff, scenic stuff, the kind
+        of "only in Korea" experiences you don't get to do twice.
+      </p>
+    </div>
+
+    <div class="appointments">
+      <div class="appointments-title">★ Locked in</div>
+      <div class="appt-row">
+        <div class="appt-day">Fri 22</div>
+        <div><strong>Lijin Skin Clinic</strong> · Myeongdong · morning</div>
+      </div>
+      <div class="appt-row">
+        <div class="appt-day">Mon 25</div>
+        <div><strong>Cheongdam Heal Clinic</strong> · 3:00 pm · cousin coming too</div>
+      </div>
+      <div class="appt-row">
+        <div class="appt-day">Tue 26</div>
+        <div>DMZ tour (she goes, 6 hrs) · solo day for me</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== FRIDAY ========== -->
+<section class="day">
+  <div class="container">
+    <div class="day-header">
+      <div class="day-number">— Day One · Friday, 22 May —</div>
+      <h1 class="day-title">Lijin, palace, <em>and Ikseondong.</em></h1>
+      <p class="day-tagline">Lijin first, then the hits with cousin. Long day, easy pace.</p>
+    </div>
+
+    <div class="day-body">
+      <ol class="agenda">
+
+        <li class="agenda-item">
+          <div class="agenda-time">9:30</div>
+          <div class="agenda-body">
+            <h3>Lijin Skin Clinic</h3>
+            <div class="meta">Myeongdong · morning treatment</div>
+            <p>Back to hotel after, refresh.</p>
+          </div>
+        </li>
+
+        <li class="agenda-item">
+          <div class="agenda-time">11:00</div>
+          <div class="agenda-body">
+            <h3>Gyeongbokgung Palace</h3>
+            <div class="meta">Changing of the Guard · 11am</div>
+            <p>Rent hanbok at <em>Daehan Hanbok</em> (4.9★, right by the entrance) — free palace entry if you do.</p>
+          </div>
+        </li>
+
+        <li class="agenda-item">
+          <div class="agenda-time">1:30</div>
+          <div class="agenda-body">
+            <h3>Lunch in Samcheong-dong</h3>
+            <div class="meta">Between palace & Bukchon</div>
+            <p>Walking-distance restaurants — kalguksu, mandu, set-menu Korean.</p>
+          </div>
+        </li>
+
+        <li class="agenda-item">
+          <div class="agenda-time">3:00</div>
+          <div class="agenda-body">
+            <h3>Bukchon Hanok Village</h3>
+            <div class="meta">Bukchon-ro 11-gil · the iconic lane</div>
+            <p>Walk slowly, don't rush.</p>
+          </div>
+        </li>
+
+        <li class="agenda-item">
+          <div class="agenda-time">5:30</div>
+          <div class="agenda-body">
+            <h3>Ikseon-dong</h3>
+            <div class="meta">Hanok alleys · concept shops</div>
+            <p>Less touristy than Bukchon. Wander the alleys.</p>
+          </div>
+        </li>
+
+        <li class="agenda-item">
+          <div class="agenda-time">7:30</div>
+          <div class="agenda-body">
+            <h3>Dinner in a hanok courtyard</h3>
+            <div class="meta">Ikseondong</div>
+            <p>Pick by walking past. Drinks at <em>Hanok Langsom</em> till 10.</p>
+          </div>
+        </li>
+
+      </ol>
+
+      <aside class="sidebar">
+        <div class="sidebar-label">★ Swap in</div>
+        <div class="sidebar-title">If you want a lifestyle add</div>
+        <ul class="alt-list">
+          <li class="alt">
+            <div class="alt-name">Greedy Scent <strong>Bukchon</strong></div>
+            <div class="alt-meta">Custom perfume · ⭐ 5.0 · 1hr</div>
+            <div class="alt-desc">Build your own scent from 30+ Korean botanicals in a hanok studio. Real keepsake.</div>
+          </li>
+          <li class="alt">
+            <div class="alt-name">Daelim <strong>Museum</strong></div>
+            <div class="alt-meta">Seochon · contemporary art · ⭐ 4.2</div>
+            <div class="alt-desc">The fashion/design crossover museum — MSCHF, Damien Hirst-adjacent exhibitions. Free with Naver reservation.</div>
+          </li>
+          <li class="alt">
+            <div class="alt-name">Feel So Good <strong>Calli</strong></div>
+            <div class="alt-meta">Insadong · stone stamp · ⭐ 5.0</div>
+            <div class="alt-desc">Carve a personal stone seal with your name in Korean characters. Genuinely beautiful keepsake.</div>
+          </li>
+        </ul>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ========== SATURDAY ========== -->
+<section class="day">
+  <div class="container">
+    <div class="day-header">
+      <div class="day-number">— Day Two · Saturday, 23 May —</div>
+      <h1 class="day-title">Gwangjang, then <em>Hongdae for the night.</em></h1>
+      <p class="day-tagline">Breakfast at the market, afternoon shopping, dinner in Hongdae.</p>
+    </div>
+
+    <div class="day-body">
+      <ol class="agenda">
+
+        <li class="agenda-item">
+          <div class="agenda-time">10:30</div>
+          <div class="agenda-body">
+            <h3>Gwangjang Market</h3>
+            <div class="meta">Bindaetteok, mayak gimbap, yukhoe</div>
+            <p>Eat with the ajummas, skip the Instagram stalls. <em>Cash works best.</em></p>
+          </div>
+        </li>
+
+        <li class="agenda-item">
+          <div class="agenda-time">12:30</div>
+          <div class="agenda-body">
+            <h3>Insadong</h3>
+            <div class="meta">Crafts · Ssamzigil mall</div>
+            <p>15 min walk from Gwangjang. Quick wander for cousin's souvenirs.</p>
+          </div>
+        </li>
+
+        <li class="agenda-item">
+          <div class="agenda-time">3:00</div>
+          <div class="agenda-body">
+            <h3>Hongdae</h3>
+            <div class="meta">Subway · 25 min · shopping</div>
+            <p>Stylenanda, Aland, ABLE&amp;BLE. Buskers as the sun drops.</p>
+          </div>
+        </li>
+
+        <li class="agenda-item">
+          <div class="agenda-time">7:00</div>
+          <div class="agenda-body">
+            <h3>Dinner — Hongdae Budae Jjigae</h3>
+            <div class="meta">Army stew · ⭐ 4.9 · unlimited rice + ramen</div>
+            <p>Hidden corner spot. Comforting, spicy.</p>
+          </div>
+        </li>
+
+      </ol>
+
+      <aside class="sidebar">
+        <div class="sidebar-label">★ Swap in</div>
+        <div class="sidebar-title">Skip the chaos</div>
+        <ul class="alt-list">
+          <li class="alt">
+            <div class="alt-name">Greedy Scent <strong>Yeonnam</strong></div>
+            <div class="alt-meta">Perfume making · ⭐ 5.0</div>
+            <div class="alt-desc">One subway stop from Hongdae. Build a fragrance from 36 Korean scents. ~1hr.</div>
+          </li>
+          <li class="alt">
+            <div class="alt-name">Teterot <strong>Salon</strong></div>
+            <div class="alt-meta">Korean vintage fashion · ⭐ 5.0 · 2,400+ reviews</div>
+            <div class="alt-desc">The Korean vintage store everyone on Instagram. Size-inclusive, beautiful pieces, reasonable prices.</div>
+          </li>
+          <li class="alt">
+            <div class="alt-name">Daelim <strong>Museum</strong></div>
+            <div class="alt-meta">Seochon · if missed Friday</div>
+            <div class="alt-desc">Contemporary art / fashion crossover. The serious version of an afternoon.</div>
+          </li>
+        </ul>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ========== SUNDAY ========== -->
+<section class="day">
+  <div class="container">
+    <div class="day-header">
+      <div class="day-number">— Day Three · Sunday, 24 May —</div>
+      <h1 class="day-title">A slow Seongsu day.</h1>
+      <p class="day-tagline">Aesthetic capital. Brunch, concept stores, river sunset. Skin in hydration mode before Monday's clinic.</p>
+    </div>
+
+    <div class="day-body">
+      <ol class="agenda">
+
+        <li class="agenda-item">
+          <div class="agenda-time">11:00</div>
+          <div class="agenda-body">
+            <h3>Brunch — Standard Bread</h3>
+            <div class="meta">Seongsu · ⭐ 4.8 · book CATCHTABLE</div>
+            <p>Crème brûlée French toast.</p>
+          </div>
+        </li>
+
+        <li class="agenda-item">
+          <div class="agenda-time">12:30</div>
+          <div class="agenda-body">
+            <h3>Walk Yeonmujang-gil</h3>
+            <div class="meta">Seongsu cafe street · 1.5 hrs</div>
+            <p>Tamburins flagship, Nudake, Dior cafe, Mardi Mercredi, LCDC concept complex. Browse, photograph, buy what you love.</p>
+          </div>
+        </li>
+
+        <li class="agenda-item">
+          <div class="agenda-time">5:00</div>
+          <div class="agenda-body">
+            <h3>Ttukseom Hangang Park</h3>
+            <div class="meta">10 min cab from Seongsu · sunset</div>
+            <p>Convenience store chicken + drinks, rent a mat for ₩5,000, sit by the river. <em>The most Seoul thing tourists never figure out.</em></p>
+          </div>
+        </li>
+
+        <li class="agenda-item">
+          <div class="agenda-time">7:30</div>
+          <div class="agenda-body">
+            <h3>Dinner — Joo 052</h3>
+            <div class="meta">Seongdong · creative Korean · ⭐ 4.7 · Michelin-worthy</div>
+            <p>Intimate, local ingredients, attentive service in English. Korean wine pairing if you can have one drink. <em>Book ahead.</em></p>
+          </div>
+        </li>
+
+      </ol>
+
+      <aside class="sidebar">
+        <div class="sidebar-label">★ Swap in</div>
+        <div class="sidebar-title">Lifestyle adds</div>
+        <ul class="alt-list">
+          <li class="alt">
+            <div class="alt-name">Twelve at <strong>Twelve</strong></div>
+            <div class="alt-meta">Cheongdam · wellness smoothies · 5min from Seongsu</div>
+            <div class="alt-desc">Hyper-organic ginseng & superfood smoothies. Pricey + slow service but the Instagram one. Could be your post-river stop.</div>
+          </li>
+          <li class="alt">
+            <div class="alt-name">Olive Young <strong>skin scan</strong></div>
+            <div class="alt-meta">Apgujeong flagship · free · book ahead</div>
+            <div class="alt-desc">15-min skin analysis with Miso (English). Pore, scalp, hydration, pigment. No pressure to buy.</div>
+          </li>
+        </ul>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<div class="container">
+  <div class="pull-quote">
+    <p>"Monday is the appointment, then we soften the night down to its quietest version."</p>
+  </div>
+</div>
+
+<!-- ========== MONDAY ========== -->
+<section class="day">
+  <div class="container">
+    <div class="day-header">
+      <div class="day-number">— Day Four · Monday, 25 May —</div>
+      <h1 class="day-title">Apgujeong Rodeo, Heal, <em>Vinho.</em></h1>
+      <p class="day-tagline">Cousin's coming to Heal too. We do Apgujeong Rodeo together first, then the clinic, then a quiet dinner.</p>
+    </div>
+
+    <div class="day-body">
+      <ol class="agenda">
+
+        <li class="agenda-item">
+          <div class="agenda-time">11:00</div>
+          <div class="agenda-body">
+            <h3>Apgujeong Rodeo Street</h3>
+            <div class="meta">Boutique walking street · old Gangnam</div>
+            <p>Cousin gets the shopping she wants. Boutiques, K-fashion, walkable. <strong>Sappun (Garosu-gil branch)</strong> is a 10-min walk — Korean shoes brand, comfortable heels, reasonable prices, ⭐ 4.8.</p>
+          </div>
+        </li>
+
+        <li class="agenda-item">
+          <div class="agenda-time">1:00</div>
+          <div class="agenda-body">
+            <h3>Lunch — Hyundai Apgujeong B1</h3>
+            <div class="meta">Department store food hall</div>
+            <p>Light. Bibimbap, soup, strawberries. <em>Conserve energy. No coffee right before Heal.</em></p>
+          </div>
+        </li>
+
+        <li class="agenda-item">
+          <div class="agenda-time">2:45</div>
+          <div class="agenda-body">
+            <h3>Heal Clinic</h3>
+            <div class="meta">Hakdong-ro 97-gil · ⭐ 5.0</div>
+            <p>Arrive 15 min early. Botox + Re2O · 60–90 min total. Cousin in the waiting area or browsing Galleria next door.</p>
+          </div>
+        </li>
+
+        <li class="agenda-item">
+          <div class="agenda-time">5:00</div>
+          <div class="agenda-body">
+            <h3>Cheongdam Fashion Street</h3>
+            <div class="meta">Dosan-daero flagships</div>
+            <p>Dior, Chanel, Gentle Monster, Tamburins, Margiela. Walk, photograph. No need to enter every store.</p>
+          </div>
+        </li>
+
+        <li class="agenda-item">
+          <div class="agenda-time">7:30</div>
+          <div class="agenda-body">
+            <h3>Dinner — Vinho</h3>
+            <div class="meta">Hakdong-ro 43-gil · 9-course tasting · ⭐ 4.8</div>
+            <p>European-Korean fine dining bar counter. Oyster granita, Korean beef sirloin, attentive service. <em>Skip the wine pairing tonight — 24hr post-Botox.</em> Book ahead.</p>
+          </div>
+        </li>
+
+      </ol>
+
+      <aside class="sidebar">
+        <div class="sidebar-label">★ Bigger Monday alternative</div>
+        <div class="sidebar-title">If you want a fine-dining night</div>
+        <ul class="alt-list">
+          <li class="alt">
+            <div class="alt-name">CMB Wine <strong>Experience</strong></div>
+            <div class="alt-meta">Cheongdam · ⭐ 5.0 · brand new</div>
+            <div class="alt-desc">First Concours Mondial de Bruxelles in Asia. Blind tasting concept, 4 floors, formerly SM Entertainment's space. Stunning room — even without drinking the wine, it's the experience. Closed Sundays so Monday works.</div>
+          </li>
+          <li class="alt">
+            <div class="alt-name">Pairing <strong>Room</strong></div>
+            <div class="alt-meta">Italian-Korean fusion · walk-in friendly</div>
+            <div class="alt-desc">If Vinho is booked. Truffle gnocchi, signature cocktails, soft on a freshly-treated face.</div>
+          </li>
+        </ul>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ========== TUESDAY — SOLO ========== -->
+<section class="day solo">
+  <div class="container">
+    <div class="day-header">
+      <div class="day-number">— Day Five · Tuesday, 26 May —</div>
+      <h1 class="day-title">A day <em>entirely for me.</em></h1>
+      <p class="day-tagline">She leaves before dawn for the DMZ. Six hours of lifestyle, beauty, photoshoot, library.</p>
+    </div>
+
+    <div class="day-body">
+      <ol class="agenda">
+
+        <li class="agenda-item">
+          <div class="agenda-time">9:00</div>
+          <div class="agenda-body">
+            <h3>Octobee Studio — premium photoshoot</h3>
+            <div class="meta">Sinsa B1 · ⭐ 5.0 · 900+ reviews</div>
+            <p><strong>Book via WhatsApp in advance.</strong> Hair + makeup partner salon, 2 concepts, clothing rack on-site, raw files available. Photographer guides poses well even if you're awkward in front of a camera. ~3 hours total including styling. <em>This is the REIGN moment.</em></p>
+          </div>
+        </li>
+
+        <li class="agenda-item">
+          <div class="agenda-time">12:00</div>
+          <div class="agenda-body">
+            <h3>Twelve at Twelve — wellness smoothie</h3>
+            <div class="meta">Cheongdam · Dosan-daero · organic superfoods</div>
+            <p>Walking distance from Octobee. Premium organic smoothies (ginseng, superfoods) at Shinsegae's wellness market. <em>Order quick — service can be slow at peak hours.</em></p>
+          </div>
+        </li>
+
+        <li class="agenda-item">
+          <div class="agenda-time">1:00</div>
+          <div class="agenda-body">
+            <h3>Lunch — Hanwoori</h3>
+            <div class="meta">Sinsa · premium Korean in a hanok</div>
+            <p>Slow, banchan-rich solo lunch. Photogenic.</p>
+          </div>
+        </li>
+
+        <li class="agenda-item">
+          <div class="agenda-time">2:30</div>
+          <div class="agenda-body">
+            <h3>OWM — Optima Wellness Museum</h3>
+            <div class="meta">Gangnam flagship · ⭐ TikTok-famous</div>
+            <p>The "museum pharmacy" everyone's posting about. <strong>Free AI body + skin analysis downstairs</strong>, then English-speaking pharmacists upstairs to walk you through products. 3,000+ items: K-beauty, supplements, derma-cosmetics. Ask for Ellie.</p>
+          </div>
+        </li>
+
+        <li class="agenda-item">
+          <div class="agenda-time">3:30</div>
+          <div class="agenda-body">
+            <h3>Smart Skn — skin analysis</h3>
+            <div class="meta">AI skin diagnostics · K-beauty matching</div>
+            <p>Pair with the OWM scan or skip if OWM covered it. <em>Confirm location with hotel concierge — they have multiple sites in Gangnam.</em></p>
+          </div>
+        </li>
+
+        <li class="agenda-item">
+          <div class="agenda-time">4:30</div>
+          <div class="agenda-body">
+            <h3>Sulwhasoo Flagship</h3>
+            <div class="meta">Sinsa-dong · ⭐ 4.7 · open Tue</div>
+            <p>Neri&amp;Hu-designed. Ginseng tea while you browse. Closed Mondays — Tuesday is the day.</p>
+          </div>
+        </li>
+
+        <li class="agenda-item">
+          <div class="agenda-time">5:30</div>
+          <div class="agenda-body">
+            <h3>Garosu-gil — Sappun, Gentle Monster, Tamburins</h3>
+            <div class="meta">Boutique street</div>
+            <p>Quick wander before COEX. <strong>Sappun</strong> if you didn't get shoes Monday — ⭐ 4.8, comfortable Korean heels.</p>
+          </div>
+        </li>
+
+        <li class="agenda-item">
+          <div class="agenda-time">6:30</div>
+          <div class="agenda-body">
+            <h3>Starfield Library at COEX</h3>
+            <div class="meta">⭐ 4.6 · 5,900+ reviews</div>
+            <p>The library. 13-meter shelves. Sit and read for an hour with a coffee.</p>
+          </div>
+        </li>
+
+        <li class="agenda-item">
+          <div class="agenda-time">8:00</div>
+          <div class="agenda-body">
+            <h3>Reunite in Myeongdong</h3>
+            <div class="meta">Hotel · dinner debrief</div>
+            <p>Compare days.</p>
+          </div>
+        </li>
+
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ========== WEDNESDAY ========== -->
+<section class="day">
+  <div class="container">
+    <div class="day-header">
+      <div class="day-number">— Day Six · Wednesday, 27 May —</div>
+      <h1 class="day-title">Hair spa, Olive Young, <em>final feast.</em></h1>
+      <p class="day-tagline">The premium hair spa together (cousin wanted it!), then shopping, then KBBQ send-off. 48+ hrs post-Botox so all the spa stuff is now fair game.</p>
+    </div>
+
+    <div class="day-body">
+      <ol class="agenda">
+
+        <li class="agenda-item">
+          <div class="agenda-time">10:00</div>
+          <div class="agenda-body">
+            <h3>Park Jun Beauty Lab — head spa together</h3>
+            <div class="meta">Cheongdam · ⭐ 4.9 · 2,700+ reviews</div>
+            <p><strong>Book in advance via Instagram DM.</strong> 15-step scalp treatment + signature blowout for both of us. Director Ji-Hyo's reputation pulls international clients. English-speaking. ~2hrs each, ₩200–300k. The Instagram-famous Korean head spa experience.</p>
+          </div>
+        </li>
+
+        <li class="agenda-item">
+          <div class="agenda-time">12:30</div>
+          <div class="agenda-body">
+            <h3>Lunch — Chaeum</h3>
+            <div class="meta">Myeongdong · traditional Korean · halal-friendly · ⭐ 4.9</div>
+            <p>Set menus, generous banchan, proper meal. Walk back from Park Jun via subway.</p>
+          </div>
+        </li>
+
+        <li class="agenda-item">
+          <div class="agenda-time">2:30</div>
+          <div class="agenda-body">
+            <h3>Olive Young Myeongdong Town</h3>
+            <div class="meta">Flagship · the haul · passport for tax-free</div>
+            <p>Stock for KL. Pair what we learned from Tuesday's skin scans with the products here.</p>
+          </div>
+        </li>
+
+        <li class="agenda-item">
+          <div class="agenda-time">4:30</div>
+          <div class="agenda-body">
+            <h3>Dongdaemun + DDP</h3>
+            <div class="meta">Zaha Hadid building · last shopping</div>
+            <p>Doota Mall (<em>skip top floor — aggressive sellers</em>). DDP architecture at dusk when the lights come on.</p>
+          </div>
+        </li>
+
+        <li class="agenda-item">
+          <div class="agenda-time">7:30</div>
+          <div class="agenda-body">
+            <h3>Final dinner — KBBQ Mongvely</h3>
+            <div class="meta">Myeongdong · ⭐ 4.9 · unlimited</div>
+            <p>Charcoal grill, high-quality cuts. Then Myeongdong night market till 11.</p>
+          </div>
+        </li>
+
+      </ol>
+
+      <aside class="sidebar">
+        <div class="sidebar-label">★ Skip a stop, swap in</div>
+        <div class="sidebar-title">If you want one more wellness moment</div>
+        <ul class="alt-list">
+          <li class="alt">
+            <div class="alt-name">Premier Spa <strong>Cheongdam</strong></div>
+            <div class="alt-meta">Body massage · ⭐ 4.4 · 60–90 min</div>
+            <div class="alt-desc">If you skip Dongdaemun. Best body massage in the area. Pure wind-down before flying.</div>
+          </li>
+          <li class="alt">
+            <div class="alt-name">Cheongdam <strong>Sauna Cocoon</strong></div>
+            <div class="alt-meta">Stone sauna · luxury jjimjilbang</div>
+            <div class="alt-desc">"The Hermès of saunas." Now safe — 48hr+ post-Botox. Less crowded than Dragon Hill.</div>
+          </li>
+        </ul>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<section class="tips">
+  <div class="container">
+    <div class="tips-header">
+      <h2>A few <em>useful things.</em></h2>
+    </div>
+    <div class="tips-grid">
+      <div class="tips-col">
+        <h3>Book ahead</h3>
+        <ul>
+          <li><strong>Octobee Studio</strong> — WhatsApp at least a week ahead. They book hair/makeup partner salon too.</li>
+          <li><strong>Park Jun Cheongdam</strong> — Instagram DM 5–7 days ahead. Two people, English-speaking designer.</li>
+          <li><strong>Joo 052, Vinho</strong> — CATCHTABLE or call. Vinho fills up.</li>
+          <li><strong>Standard Bread</strong> — CATCHTABLE the night before.</li>
+          <li><strong>Olive Young skin scan, Smart Skn</strong> — walk-in possible but appointment better.</li>
+          <li><strong>OWM</strong> — no booking needed, just walk in.</li>
+        </ul>
+      </div>
+      <div class="tips-col">
+        <h3>Post-Heal rules</h3>
+        <ul>
+          <li><strong>No saunas / jjimjilbang for 48 hrs</strong> after Botox. Bathhouse Wednesday is fine.</li>
+          <li><strong>No alcohol</strong> 24hrs after — skip wine at Vinho.</li>
+          <li><strong>No facial massage / heat</strong> for 24hrs. Body massage Wed is fine.</li>
+          <li><strong>Hair spa Wednesday</strong> = 40+ hrs post-Heal. Safe.</li>
+          <li><strong>Sleep slightly elevated</strong> Monday night.</li>
+          <li><strong>SPF 50</strong>, reapply, especially walking days.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-flourish">⌘</div>
+    <p>Eight days, two cousins, one city.</p>
+    <p>See you in Seoul.</p>
+    <div class="signature">— M.</div>
+  </div>
+</footer>
+
+</body>
+</html>
