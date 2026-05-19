@@ -64,6 +64,65 @@
     padding: 80px 32px 60px;
     position: relative;
   }
+  .cover-photo {
+    margin: 56px 0 0;
+    aspect-ratio: 21 / 9;
+    overflow: hidden;
+    position: relative;
+  }
+  .cover-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    filter: sepia(0.18) saturate(0.92) contrast(1.02);
+  }
+  .cover-photo::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(244,236,223,0) 60%, rgba(244,236,223,0.35) 100%);
+    pointer-events: none;
+  }
+  .day-photo {
+    margin: 0 0 44px;
+    aspect-ratio: 21 / 9;
+    overflow: hidden;
+    position: relative;
+  }
+  .day-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    filter: sepia(0.15) saturate(0.94) contrast(1.02);
+  }
+  .day-photo .photo-caption {
+    position: absolute;
+    bottom: 14px;
+    left: 18px;
+    font-family: 'Bodoni Moda', serif;
+    font-style: italic;
+    font-size: 13px;
+    color: var(--cream);
+    text-shadow: 0 1px 8px rgba(0,0,0,0.6);
+    letter-spacing: 0.02em;
+  }
+  .book-tag {
+    display: inline-block;
+    font-family: 'Inter Tight', sans-serif;
+    font-size: 9px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--accent);
+    background: rgba(168, 58, 44, 0.08);
+    border: 1px solid rgba(168, 58, 44, 0.35);
+    padding: 3px 8px 2px;
+    margin-left: 8px;
+    vertical-align: middle;
+    white-space: nowrap;
+  }
+  .book-tag::before { content: '★ '; }
   .cover-meta {
     font-family: 'Inter Tight', sans-serif;
     font-size: 11px;
@@ -381,6 +440,11 @@
     body { font-size: 16px; }
     .container { padding: 0 22px; }
     .cover { padding: 60px 22px 40px; min-height: auto; }
+    .cover-photo { margin-top: 36px; aspect-ratio: 4 / 3; }
+    .cover-photo .photo-caption { font-size: 12px; }
+    .day-photo { aspect-ratio: 4 / 3; margin-bottom: 32px; }
+    .day-photo .photo-caption { font-size: 12px; bottom: 10px; left: 14px; }
+    .book-tag { font-size: 8.5px; letter-spacing: 0.18em; padding: 2px 6px 1px; margin-left: 6px; }
     .cover h1 { font-size: clamp(52px, 16vw, 96px); }
     .cover-sub { font-size: 18px; margin-bottom: 40px; }
     .cover-dates { gap: 24px; }
@@ -440,6 +504,10 @@
       <div class="date-block"><div class="label">Departure</div><div class="value">Thu 28 May</div></div>
       <div class="date-block"><div class="label">Based in</div><div class="value">Myeongdong</div></div>
     </div>
+    <div class="cover-photo">
+      <img src="https://images.unsplash.com/premium_photo-1692388619704-57663e3ea47b?w=1600&q=80&auto=format&fit=crop" alt="Bukchon Hanok Village rooftops with Seoul skyline" loading="eager">
+      <div class="photo-caption">Bukchon — where the rooftops still curve.</div>
+    </div>
   </div>
 </section>
 
@@ -475,6 +543,10 @@
 <!-- ========== FRIDAY ========== -->
 <section class="day">
   <div class="container">
+    <div class="day-photo">
+      <img src="https://images.unsplash.com/premium_photo-1697729890503-bcb24e606a2c?w=1600&q=80&auto=format&fit=crop" alt="Gyeongbokgung Palace gate with traditional architecture" loading="lazy">
+      <div class="photo-caption">Gyeongbokgung at the changing of the guard.</div>
+    </div>
     <div class="day-header">
       <div class="day-number">— Day One · Friday, 22 May —</div>
       <h1 class="day-title">Lijin, palace, <em>and Ikseondong.</em></h1>
@@ -568,6 +640,10 @@
 <!-- ========== SATURDAY ========== -->
 <section class="day">
   <div class="container">
+    <div class="day-photo">
+      <img src="https://images.unsplash.com/photo-1590437084089-9f5ae1500176?w=1600&q=80&auto=format&fit=crop" alt="Gwangjang Market food stalls at night" loading="lazy">
+      <div class="photo-caption">Gwangjang — eat with the ajummas, cash in hand.</div>
+    </div>
     <div class="day-header">
       <div class="day-number">— Day Two · Saturday, 23 May —</div>
       <h1 class="day-title">Gwangjang, then <em>Hongdae for the night.</em></h1>
@@ -643,6 +719,10 @@
 <!-- ========== SUNDAY ========== -->
 <section class="day">
   <div class="container">
+    <div class="day-photo">
+      <img src="https://images.unsplash.com/photo-1535189043414-47a3c49a0bed?w=1600&q=80&auto=format&fit=crop" alt="Quiet street between houses in Seongsu Seoul" loading="lazy">
+      <div class="photo-caption">Seongsu — Seoul's slow, aesthetic afternoon.</div>
+    </div>
     <div class="day-header">
       <div class="day-number">— Day Three · Sunday, 24 May —</div>
       <h1 class="day-title">A slow Seongsu day.</h1>
@@ -655,8 +735,8 @@
         <li class="agenda-item">
           <div class="agenda-time">11:00</div>
           <div class="agenda-body">
-            <h3>Brunch — Standard Bread</h3>
-            <div class="meta">Seongsu · ⭐ 4.8 · book CATCHTABLE</div>
+            <h3>Brunch — Standard Bread<span class="book-tag">Book ahead</span></h3>
+            <div class="meta">Seongsu · ⭐ 4.8 · CATCHTABLE the night before</div>
             <p>Crème brûlée French toast.</p>
           </div>
         </li>
@@ -682,7 +762,7 @@
         <li class="agenda-item">
           <div class="agenda-time">7:30</div>
           <div class="agenda-body">
-            <h3>Dinner — Joo 052</h3>
+            <h3>Dinner — Joo 052<span class="book-tag">Book ahead</span></h3>
             <div class="meta">Seongdong · creative Korean · ⭐ 4.7 · Michelin-worthy</div>
             <p>Intimate, local ingredients, attentive service in English. Korean wine pairing if you can have one drink. <em>Book ahead.</em></p>
           </div>
@@ -719,6 +799,10 @@
 <!-- ========== MONDAY ========== -->
 <section class="day">
   <div class="container">
+    <div class="day-photo">
+      <img src="https://images.unsplash.com/photo-1546874177-9e664107314e?w=1600&q=80&auto=format&fit=crop" alt="Seoul Gangnam district skyline at night" loading="lazy">
+      <div class="photo-caption">Cheongdam — flagships and fine dining at dusk.</div>
+    </div>
     <div class="day-header">
       <div class="day-number">— Day Four · Monday, 25 May —</div>
       <h1 class="day-title">Apgujeong Rodeo, Heal, <em>Vinho.</em></h1>
@@ -767,7 +851,7 @@
         <li class="agenda-item">
           <div class="agenda-time">7:30</div>
           <div class="agenda-body">
-            <h3>Dinner — Vinho</h3>
+            <h3>Dinner — Vinho<span class="book-tag">Book ahead</span></h3>
             <div class="meta">Hakdong-ro 43-gil · 9-course tasting · ⭐ 4.8</div>
             <p>European-Korean fine dining bar counter. Oyster granita, Korean beef sirloin, attentive service. <em>Skip the wine pairing tonight — 24hr post-Botox.</em> Book ahead.</p>
           </div>
@@ -780,7 +864,7 @@
         <div class="sidebar-title">If you want a fine-dining night</div>
         <ul class="alt-list">
           <li class="alt">
-            <div class="alt-name">CMB Wine <strong>Experience</strong></div>
+            <div class="alt-name">CMB Wine <strong>Experience</strong><span class="book-tag">Book ahead</span></div>
             <div class="alt-meta">Cheongdam · ⭐ 5.0 · brand new</div>
             <div class="alt-desc">First Concours Mondial de Bruxelles in Asia. Blind tasting concept, 4 floors, formerly SM Entertainment's space. Stunning room — even without drinking the wine, it's the experience. Closed Sundays so Monday works.</div>
           </li>
@@ -798,6 +882,10 @@
 <!-- ========== TUESDAY — SOLO ========== -->
 <section class="day solo">
   <div class="container">
+    <div class="day-photo">
+      <img src="https://images.unsplash.com/photo-1742743920246-dfa5cce0982e?w=1600&q=80&auto=format&fit=crop" alt="Starfield Library COEX 13-meter bookshelves" loading="lazy">
+      <div class="photo-caption">Starfield Library — thirteen meters of quiet.</div>
+    </div>
     <div class="day-header">
       <div class="day-number">— Day Five · Tuesday, 26 May —</div>
       <h1 class="day-title">A day <em>entirely for me.</em></h1>
@@ -810,8 +898,8 @@
         <li class="agenda-item">
           <div class="agenda-time">9:00</div>
           <div class="agenda-body">
-            <h3>Octobee Studio — premium photoshoot</h3>
-            <div class="meta">Sinsa B1 · ⭐ 5.0 · 900+ reviews</div>
+            <h3>Octobee Studio — premium photoshoot<span class="book-tag">Book 1wk ahead</span></h3>
+            <div class="meta">Sinsa B1 · ⭐ 5.0 · 900+ reviews · WhatsApp to reserve</div>
             <p><strong>Book via WhatsApp in advance.</strong> Hair + makeup partner salon, 2 concepts, clothing rack on-site, raw files available. Photographer guides poses well even if you're awkward in front of a camera. ~3 hours total including styling. <em>This is the REIGN moment.</em></p>
           </div>
         </li>
@@ -896,6 +984,10 @@
 <!-- ========== WEDNESDAY ========== -->
 <section class="day">
   <div class="container">
+    <div class="day-photo">
+      <img src="https://images.unsplash.com/photo-1630229446420-991180f9b69f?w=1600&q=80&auto=format&fit=crop" alt="Seoul city skyline at night" loading="lazy">
+      <div class="photo-caption">One last Seoul night. KBBQ + neon.</div>
+    </div>
     <div class="day-header">
       <div class="day-number">— Day Six · Wednesday, 27 May —</div>
       <h1 class="day-title">Hair spa, Olive Young, <em>final feast.</em></h1>
@@ -908,8 +1000,8 @@
         <li class="agenda-item">
           <div class="agenda-time">10:00</div>
           <div class="agenda-body">
-            <h3>Park Jun Beauty Lab — head spa together</h3>
-            <div class="meta">Cheongdam · ⭐ 4.9 · 2,700+ reviews</div>
+            <h3>Park Jun Beauty Lab — head spa together<span class="book-tag">Book 5-7 days ahead</span></h3>
+            <div class="meta">Cheongdam · ⭐ 4.9 · 2,700+ reviews · Instagram DM to reserve</div>
             <p><strong>Book in advance via Instagram DM.</strong> 15-step scalp treatment + signature blowout for both of us. Director Ji-Hyo's reputation pulls international clients. English-speaking. ~2hrs each, ₩200–300k. The Instagram-famous Korean head spa experience.</p>
           </div>
         </li>
